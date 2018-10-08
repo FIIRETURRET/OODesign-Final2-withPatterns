@@ -18,6 +18,8 @@ public class BattleWorld extends JPanel {
    int numCavalryTeam1 = 10;
    int numCavalryTeam2 = 10;
    
+   SimpleFighterFactory factory = new SimpleFighterFactory();
+   
    Fighter[] listOfWarriors;
    Fighter[] listOfArchers;
    Fighter[] listOfCavalry;
@@ -49,9 +51,10 @@ public class BattleWorld extends JPanel {
       int speed = 5;
       int angleInDegree = rand.nextInt(360);
       
-      listOfWarriors = makeWarriors(numWarriorsTeam1, numWarriorsTeam2, 1, 2);
-      listOfArchers = makeArchers(numArchersTeam1, numArchersTeam2, 1, 2);
-      listOfCavalry = makeCavalry(numCavalryTeam1, numCavalryTeam2, 1, 2);
+      listOfWarriors = factory.createFighter("warrior", canvasWidth, canvasHeight, numWarriorsTeam1, numWarriorsTeam2, 1, 2);
+      listOfArchers = factory.createFighter("archer", canvasWidth, canvasHeight, numArchersTeam1, numArchersTeam2, 1, 2);
+      listOfCavalry = factory.createFighter("cavalry", canvasWidth, canvasHeight, numCavalryTeam1, numCavalryTeam2, 1, 2);
+      
       general = new General(listOfWarriors, listOfArchers, listOfCavalry);
      
       // Init the Container Box to fill the screen
@@ -114,63 +117,6 @@ public class BattleWorld extends JPanel {
 		  listOfCavalry[x].update(general.findClosestFighter(listOfCavalry[x]), listOfCavalry[x], box);
 	  }
       
-   }
-   
-   public Fighter[] makeWarriors(int num, int num2, int team, int team2) {
-	   Fighter[] listOfFighters = new Fighter[num + num2];
-	   int radius = 10;
-	   Random rand = new Random();
-		
-	   for (int q = 0; q <= num-1; q++) {
-		   int x = rand.nextInt(canvasWidth - radius * 2 - 20) + radius + 10;
-		   int y = rand.nextInt(canvasHeight - radius * 2 - 20) + radius + 10;
-		   listOfFighters[q] = new Warrior(radius, x, y, team);;
-		}
-	   for (int q = num; q <= (num + num2)-1; q++) {
-		   int x = rand.nextInt(canvasWidth - radius * 2 - 20) + radius + 10;
-		   int y = rand.nextInt(canvasHeight - radius * 2 - 20) + radius + 10;
-		   listOfFighters[q] = new Warrior(radius, x, y, team2);;
-	   }
-		
-	   return listOfFighters;   
-   }
-   
-   public Fighter[] makeArchers(int num, int num2, int team, int team2) {
-	   Fighter[] listOfFighters = new Fighter[num+num2];
-	   int radius = 10;
-	   Random rand = new Random();
-		
-	   for (int q = 0; q <= num2-1; q++) {
-		   int x = rand.nextInt(canvasWidth - radius * 2 - 20) + radius + 10;
-		   int y = rand.nextInt(canvasHeight - radius * 2 - 20) + radius + 10;
-		   listOfFighters[q] = new Archer(radius, x, y, team2);;
-		}
-	   for (int q = num2; q <= (num + num2)-1; q++) {
-		   int x = rand.nextInt(canvasWidth - radius * 2 - 20) + radius + 10;
-		   int y = rand.nextInt(canvasHeight - radius * 2 - 20) + radius + 10;
-		   listOfFighters[q] = new Archer(radius, x, y, team);;
-	   }
-		
-	   return listOfFighters;   
-   }
-   
-   public Fighter[] makeCavalry(int num, int num2, int team, int team2) {
-	   Fighter[] listOfFighters = new Fighter[num+num2];
-	   int radius = 10;
-	   Random rand = new Random();
-		
-	   for (int q = 0; q <= num2-1; q++) {
-		   int x = rand.nextInt(canvasWidth - radius * 2 - 20) + radius + 10;
-		   int y = rand.nextInt(canvasHeight - radius * 2 - 20) + radius + 10;
-		   listOfFighters[q] = new Cavalry(radius, x, y, team2);;
-		}
-	   for (int q = num2; q <= (num + num2)-1; q++) {
-		   int x = rand.nextInt(canvasWidth - radius * 2 - 20) + radius + 10;
-		   int y = rand.nextInt(canvasHeight - radius * 2 - 20) + radius + 10;
-		   listOfFighters[q] = new Cavalry(radius, x, y, team);;
-	   }
-		
-	   return listOfFighters;   
    }
    
    /** The custom drawing panel for the bouncing ball (inner class). */
