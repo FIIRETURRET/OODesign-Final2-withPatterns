@@ -21,19 +21,6 @@ public class Archer extends Fighter{
 		location = new Point(x,y);
 		lastShotTime = 0;
 	}
-	
-	// Find the closest Archer
-	@Override
-	public void targetFighter() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void move() {
-		// TODO Auto-generated method stub
-		
-	}
 
 	@Override
 	public void attack(Fighter fighter) {
@@ -316,7 +303,5 @@ public class Archer extends Fighter{
 				g.drawLine(x, y, target.location.x, target.location.y);
 			}	
 		}
-	}
-
-	
+	}	
 }

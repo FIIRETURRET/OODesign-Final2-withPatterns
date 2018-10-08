@@ -17,19 +17,6 @@ public class Warrior extends Fighter{
 		location = new Point(x,y);
 		collisionManager = CollisionManager.getInstance();
 	}
-	
-	// Find the closest Archer
-	@Override
-	public void targetFighter() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void move() {
-		// TODO Auto-generated method stub
-		
-	}
 
 	public void attack(Fighter target) {
 		// TODO Auto-generated method stub

@@ -23,19 +23,6 @@ public class Cavalry extends Fighter{
 		charging = false;
 		lastStopPoint = new Point(x,y);
 	}
-	
-	// Find the closest Archer
-	@Override
-	public void targetFighter() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void move() {
-		// TODO Auto-generated method stub
-		
-	}
 
 	public void attack(Fighter target) {
 		// TODO Auto-generated method stub

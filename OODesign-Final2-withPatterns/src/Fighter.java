@@ -46,8 +46,6 @@ public abstract class Fighter {
 		return targetPoint;
 	}
 	
-	public abstract void targetFighter();
-	public abstract void move();
 	public abstract void attack(Fighter fighter);
 	public abstract void update(Fighter fighter, Fighter myself, ContainerBox box);
 	public abstract void draw(Graphics g);
