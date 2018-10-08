@@ -15,7 +15,7 @@ public class Warrior extends Fighter{
 		y = newy;
 		this.team = team;
 		location = new Point(x,y);
-		collisionManager = new CollisionManager();
+		collisionManager = CollisionManager.getInstance();
 	}
 	
 	// Find the closest Archer

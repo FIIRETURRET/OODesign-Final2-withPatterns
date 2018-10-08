@@ -19,7 +19,7 @@ public class Cavalry extends Fighter{
 		y = newy;
 		this.team = team;
 		location = new Point(x,y);
-		collisionManager = new CollisionManager();
+		collisionManager = CollisionManager.getInstance();
 		charging = false;
 		lastStopPoint = new Point(x,y);
 	}

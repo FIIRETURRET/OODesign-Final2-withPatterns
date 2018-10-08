@@ -1,12 +1,23 @@
 import java.awt.Point;
 
 public class CollisionManager {
+	// Have CollisionManager be a singleton to ensure interactions don't screw up in our main game.
+	private static CollisionManager uniqueInstance;
 	Fighter fighter;
 	Fighter target;
 	boolean collision;
 
-	public CollisionManager(){
+	private CollisionManager(){
 		this.collision = false;
+	}
+	
+	public static synchronized CollisionManager getInstance(){
+		// I do not plan to implement multi-threading, however if it is added there should not be much overhead in the creation
+		//	of the collisionManager as it should only happen once. Therefore, I just add synchronized to this method.
+		if (uniqueInstance == null) {
+			uniqueInstance = new CollisionManager();
+		}
+		return uniqueInstance;
 	}
 	
 	public double findDistanceBetweenPoints(Point p1, Point p2) {
