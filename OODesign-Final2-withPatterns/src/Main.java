@@ -1,10 +1,32 @@
 import java.awt.Point;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.Enumeration;
+import java.util.Hashtable;
 
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 
 public class Main {
-
-	public static void main(String[] args) {
+	static ImageComponent imageComponent;
+	static JMenuBar menuBar;
+	static JMenu menu;
+	static Hashtable<String, String> cds = new Hashtable<String, String>();
+	
+	public static void main(String[] args) throws Exception{
+		
+		cds.put("Insert Dollar","https://i.ytimg.com/vi/EZlmj8a-Z98/maxresdefault.jpg");
+		cds.put("Eject Dollar","https://orig00.deviantart.net/2edf/f/2014/152/6/0/no_dollar_for_you__facebook__by_zombiesandwich-d7kmrrk.jpg");
+		cds.put("Choose Drink","https://www.federalmachine.com/images/vending-machines/combo/40Select-BD.jpg");
+		cds.put("Vending Machine","https://www.candymachines.com/images/bulk_vending_machines/snack_soda_vending_machines/seaga-infinity-INF5B-soda-beverage-vending-machine.jpg");
+		URL initialURL = new URL((String)cds.get("Vending Machine"));
+		menuBar = new JMenuBar();
+		menu = new JMenu("Actions");
+		menuBar.add(menu);
 		// TODO Auto-generated method stub
 
 		/**Fighter war1 = new Warrior();
@@ -22,11 +44,38 @@ public class Main {
 	    	public void run() {
 	    		JFrame frame = new JFrame("A World of Balls");
 	            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	       
+	            
+	            frame.setJMenuBar(menuBar);
+	            for (Enumeration<String> e = cds.keys(); e.hasMoreElements();) {
+	    			String name = (String)e.nextElement();
+	    			JMenuItem menuItem = new JMenuItem(name);
+	    			menu.add(menuItem); 
+	    			menuItem.addActionListener(event -> {
+	    				//imageComponent.setIcon(new ImageProxy(getCDUrl(event.getActionCommand())));
+	    				frame.setIconImage(new ImageIcon(getCDUrl(event.getActionCommand())).getImage());
+	    				
+	    				frame.repaint();
+	    			});
+	    		}
+	            Icon icon = new ImageProxy(initialURL);
+	            ImageIcon imageIcon = new ImageIcon(initialURL);
+	            imageComponent = new ImageComponent(icon);
+	            frame.setIconImage(imageIcon.getImage());
 	            frame.setContentPane(new BattleWorld(640, 480)); // BallWorld is a JPanel
 	            frame.pack();            // Preferred size of BallWorld
 	            frame.setVisible(true);  // Show it
 	         }
 	    });
+	}
+	
+	static URL getCDUrl(String name) {
+		try {
+			return new URL((String)cds.get(name));
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 
 }
