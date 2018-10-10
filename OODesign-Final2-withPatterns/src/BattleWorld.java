@@ -55,6 +55,8 @@ public class BattleWorld extends JPanel {
       listOfArchers = factory.createFighter("archer", canvasWidth, canvasHeight, numArchersTeam1, numArchersTeam2, 1, 2);
       listOfCavalry = factory.createFighter("cavalry", canvasWidth, canvasHeight, numCavalryTeam1, numCavalryTeam2, 1, 2);
       
+      listOfWarriors[0] = new Armor(listOfWarriors[0]);
+      
       general = new General(listOfWarriors, listOfArchers, listOfCavalry);
      
       // Init the Container Box to fill the screen

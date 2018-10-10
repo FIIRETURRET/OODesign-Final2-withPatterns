@@ -32,6 +32,10 @@ public abstract class Fighter {
 		return speed;
 	}
 	
+	public int getHealth() {
+		return health;
+	}
+	
 	public void setTarget(Fighter newTarget) {
 		target = newTarget;
 	}
