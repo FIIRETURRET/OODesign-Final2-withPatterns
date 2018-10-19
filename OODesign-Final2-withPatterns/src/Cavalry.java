@@ -9,7 +9,7 @@ public class Cavalry extends Fighter{
 	int chargingSpeed;
 
 	public Cavalry(int newRadius, int newx, int newy, int team) {
-		description = "A Knight on a horse.";
+		description = "A Knight riding a horse";
 		type = "cavalry";
 		health = 60;
 		speed = 3;
@@ -22,6 +22,7 @@ public class Cavalry extends Fighter{
 		collisionManager = CollisionManager.getInstance();
 		charging = false;
 		lastStopPoint = new Point(x,y);
+		damage = 10;
 	}
 
 	public void attack(Fighter target) {
@@ -29,12 +30,12 @@ public class Cavalry extends Fighter{
 		if (health > 0) {
 			if (target.health > 0) {
 				if (charging == true) {
-					System.out.println("Cavalry charging target");
-					target.takeDamage(40);
+					System.out.println( this.getDescription()+ " charging target");
+					target.takeDamage(damage + 30);
 					charging = false;
 				} else {
-					target.takeDamage(10);
-					System.out.println("Cavalry attacking target");
+					target.takeDamage(damage);
+					System.out.println(this.getDescription() + " attacking target");
 				}
 			}
 		}

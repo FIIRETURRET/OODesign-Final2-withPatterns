@@ -20,6 +20,7 @@ public class Archer extends Fighter{
 		this.team = team;
 		location = new Point(x,y);
 		lastShotTime = 0;
+		damage = 15;
 	}
 
 	@Override
@@ -31,8 +32,8 @@ public class Archer extends Fighter{
 		// If the time since the archer last took a shot is 1 second then attack
 		if (elapsedTime/1000 >=1 )
 		{
-			target.takeDamage(15);
-			System.out.println("Archer attacking target");
+			target.takeDamage(damage);
+			System.out.println(this.getDescription()+" attacking target");
 			attacking = true;
 			lastShotTime = System.currentTimeMillis();
 		} else {
@@ -298,7 +299,7 @@ public class Archer extends Fighter{
 	}
 	
 	public void drawAttack(Graphics g) {
-		if (health > 0) {
+		if (this.getHealth() > 0) {
 			if (attacking == true) {
 				g.drawLine(x, y, target.location.x, target.location.y);
 			}	

@@ -16,14 +16,15 @@ public class Warrior extends Fighter{
 		this.team = team;
 		location = new Point(x,y);
 		collisionManager = CollisionManager.getInstance();
+		damage = 10;
 	}
 
 	public void attack(Fighter target) {
 		// TODO Auto-generated method stub
 		if (health > 0) {
 			if (target.health > 0) {
-				target.takeDamage(10);
-				System.out.println("Warrior Attacking target");
+				target.takeDamage(damage);
+				System.out.println(this.getDescription()+" Attacking target");
 			}
 		}
 	}
@@ -121,7 +122,7 @@ public class Warrior extends Fighter{
 	
 	/** Draw itself using the given graphics context. */
 	public void draw(Graphics g) {
-		if (health > 0) {
+		if (this.getHealth() > 0) {
 			g.setColor(Color.blue);
 			g.fillOval((int)(x - radius), (int)(y - radius), (int)(2 * radius), (int)(2 * radius));
 			if (team == 1) {

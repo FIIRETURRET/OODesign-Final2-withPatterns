@@ -55,7 +55,34 @@ public class BattleWorld extends JPanel {
       listOfArchers = factory.createFighter("archer", canvasWidth, canvasHeight, numArchersTeam1, numArchersTeam2, 1, 2);
       listOfCavalry = factory.createFighter("cavalry", canvasWidth, canvasHeight, numCavalryTeam1, numCavalryTeam2, 1, 2);
       
-      listOfWarriors[0] = new Armor(listOfWarriors[0]);
+      for (int f=0; f < listOfWarriors.length; f++) {
+    	  if(rand.nextInt(100) >= 50) {
+    		  listOfWarriors[f] = new Armor(listOfWarriors[f]).returnNewFighter();
+    		  if(rand.nextInt(100) <= 15) {
+    			  listOfWarriors[f] = new EnchantedWeapon(listOfWarriors[f]).returnNewFighter();  
+    		  }
+    	  }
+      }
+      for (int f=0; f < listOfArchers.length; f++) {
+    	  if(rand.nextInt(100) >= 50) {
+    		  listOfArchers[f] = new Armor(listOfArchers[f]).returnNewFighter();  
+    		  if (rand.nextInt(100) <= 15) {
+    			  listOfArchers[f] = new EnchantedWeapon(listOfArchers[f]).returnNewFighter();
+    		  }
+    	  }
+      }
+      for (int f=0; f < listOfCavalry.length; f++) {
+    	  if(rand.nextInt(100) >= 50) {
+    		  listOfCavalry[f] = new Armor(listOfCavalry[f]).returnNewFighter();
+    		  if (rand.nextInt(100) <= 15) {
+    			  listOfCavalry[f] = new EnchantedWeapon(listOfCavalry[f]).returnNewFighter();
+    		  }
+    	  }
+      }
+      
+      
+      
+      
       
       general = new General(listOfWarriors, listOfArchers, listOfCavalry);
      
