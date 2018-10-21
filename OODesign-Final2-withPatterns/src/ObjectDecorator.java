@@ -1,4 +1,6 @@
 
+
+// used for adding powerups
 public abstract class ObjectDecorator extends Fighter{
 
 	public abstract String getDescription();
