@@ -1,5 +1,7 @@
 import java.util.Random;
 
+
+// used for creating fighters
 public class SimpleFighterFactory {
 
 	public Fighter[] createFighter(String type, int width, int height, int num, int num2, int team, int team2) {

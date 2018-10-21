@@ -3,6 +3,8 @@ import java.awt.Graphics;
 /**
  * A rectangular container box, containing the bouncing ball.  
  */
+
+// Box for gui
 public class ContainerBox {
    int minX, maxX, minY, maxY;  // Box's bounds (package access)
    private Color colorFilled;   // Box's filled color (background)

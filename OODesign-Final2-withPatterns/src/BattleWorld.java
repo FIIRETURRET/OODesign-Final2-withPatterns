@@ -6,6 +6,7 @@ import javax.swing.*;
 /**
  * The control logic and main display panel for game.
  */
+//gameworld
 public class BattleWorld extends JPanel {
    private static final int UPDATE_RATE = 30;  // Frames per second (fps)
    

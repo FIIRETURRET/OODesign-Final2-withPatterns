@@ -2,6 +2,8 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Point;
 
+
+//A warrior
 public class Warrior extends Fighter{
 	CollisionManager collisionManager;
 	

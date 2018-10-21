@@ -2,6 +2,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Point;
 
+//Cavalry
 public class Cavalry extends Fighter{
 	CollisionManager collisionManager;
 	boolean charging;

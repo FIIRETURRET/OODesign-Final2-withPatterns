@@ -3,6 +3,8 @@
 import java.awt.*;
 import javax.swing.*;
 
+
+// icons
 class ImageComponent extends JComponent {
 	private static final long serialVersionUID = 1L;
 	private Icon icon;

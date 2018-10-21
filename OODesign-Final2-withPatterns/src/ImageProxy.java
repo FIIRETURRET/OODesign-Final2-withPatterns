@@ -4,6 +4,7 @@ import java.net.*;
 import java.awt.*;
 import javax.swing.*;
 
+// used for proxy pattern
 class ImageProxy implements Icon {
 	volatile ImageIcon imageIcon;
 	final URL imageURL;

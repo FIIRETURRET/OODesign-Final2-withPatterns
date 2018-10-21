@@ -1,5 +1,7 @@
 import java.awt.Point;
 
+
+//manager for object collision
 public class CollisionManager {
 	// Have CollisionManager be a singleton to ensure interactions don't screw up in our main game.
 	private static CollisionManager uniqueInstance;

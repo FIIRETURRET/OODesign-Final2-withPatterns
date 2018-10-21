@@ -1,5 +1,7 @@
 import java.awt.Graphics;
 
+
+//Armor
 public class Armor extends ObjectDecorator{
 	Fighter fighter;
 	

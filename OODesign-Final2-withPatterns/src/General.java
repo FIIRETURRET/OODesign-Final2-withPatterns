@@ -1,5 +1,7 @@
 import java.awt.Point;
 
+
+// keeps track for object positions
 public class General {
 	
 	Fighter[] warriorList;

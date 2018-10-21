@@ -3,6 +3,7 @@ import java.awt.Graphics;
 import java.awt.Point;
 import java.util.concurrent.ThreadLocalRandom;
 
+// archer
 public class Archer extends Fighter{
 	
 	private int randomNum;

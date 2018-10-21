@@ -1,6 +1,8 @@
 import java.awt.Graphics;
 import java.awt.Point;
 
+
+//Basic fighter class
 public abstract class Fighter{
 	
 	int health;

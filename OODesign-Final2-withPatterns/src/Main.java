@@ -13,6 +13,8 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
+
+// entry point
 public class Main {
 	static ImageComponent imageComponent;
 	static JMenuBar menuBar;

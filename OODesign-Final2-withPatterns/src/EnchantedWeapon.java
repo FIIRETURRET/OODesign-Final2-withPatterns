@@ -1,5 +1,7 @@
 import java.awt.Graphics;
 
+
+//Powerup
 public class EnchantedWeapon extends ObjectDecorator{
 
 	Fighter fighter;
