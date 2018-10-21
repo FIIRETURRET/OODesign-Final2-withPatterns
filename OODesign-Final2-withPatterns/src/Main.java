@@ -23,9 +23,9 @@ public class Main {
 	
 	public static void main(String[] args) throws Exception{
 		
-		cds.put("Icon 1","https://i.ytimg.com/vi/EZlmj8a-Z98/maxresdefault.jpg");
-		cds.put("Icon 2","https://orig00.deviantart.net/2edf/f/2014/152/6/0/no_dollar_for_you__facebook__by_zombiesandwich-d7kmrrk.jpg");
-		cds.put("Icon 3","https://www.federalmachine.com/images/vending-machines/combo/40Select-BD.jpg");
+		cds.put("Icon 1","https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Edouard_Detaille_-_Vive_L%27Empereur_-_Google_Art_Project.jpg/350px-Edouard_Detaille_-_Vive_L%27Empereur_-_Google_Art_Project.jpg");
+		cds.put("Icon 2","https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Trp-Sword-14226124129-v06.png/250px-Trp-Sword-14226124129-v06.png");
+		cds.put("Icon 3","http://www.enworld.org/forum/attachment.php?attachmentid=91140&d=1511285946&stc=1");
 		cds.put("Icon 4","https://www.candymachines.com/images/bulk_vending_machines/snack_soda_vending_machines/seaga-infinity-INF5B-soda-beverage-vending-machine.jpg");
 		URL initialURL = new URL((String)cds.get("Icon 1"));
 		menuBar = new JMenuBar();

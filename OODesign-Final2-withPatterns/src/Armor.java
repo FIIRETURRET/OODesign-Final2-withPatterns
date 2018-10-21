@@ -20,7 +20,7 @@ public class Armor extends ObjectDecorator{
 	}
 	
 	public int getHealth() {
-		return fighter.getHealth() + 10;
+		return fighter.getHealth();
 	}
 
 	@Override
